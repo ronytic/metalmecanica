@@ -38,14 +38,24 @@
             <ul class="nav nav-tabs nav-stacked">
             	
                 <li class="nav-header">MENU</li>
+                <?php
+                include_once("class/menu.php");
+                $menu=new menu;
+                include_once("class/submenu.php");
+                $submenu=new submenu;
                 
-                <li class="dropdown"><a href=""><span class="iconfa-pencil"></span> Forms</a>
+                ?>
+                
+                <li class="dropdown"><a href="<?php echo $folder?>"><span class="iconfa-home"></span> Inicio</a></li>
+                <?php foreach($menu->mostrar($_SESSION['Nivel'],"") as $m){?>
+                <li class="dropdown"><a href="<?php echo $m['menu']?>"><span class="iconfa-pencil"></span> <?php echo $m['nombre']?></a>
                 	<ul>
-                    	<li><a href="forms.html">Form Styles</a></li>
-                        <li><a href="wizards.html">Wizard Form</a></li>
-                        <li><a href="wysiwyg.html">WYSIWYG</a></li>
+                        <?php foreach($submenu->mostrar($_SESSION['Nivel'],$m['codmenu']) as $sm){?>
+                    	<li><a href="<?php echo $m['url']?><?php echo $sm['url']?>"><?php echo $sm['nombre']?></a></li>
+                        <?php }?>
                     </ul>
                 </li>
+                <?php }?>
             </ul>
         </div><!--leftmenu-->
         
@@ -55,15 +65,15 @@
         
         <ul class="breadcrumbs">
             <li><a href="<?php echo $folder?>index.php"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
-            <li>INICIO</li>
+            <li>Shamcey</li>
             
         </ul>
         
         <div class="pageheader">
                       <div class="pageicon"><span class="iconfa-laptop"></span></div>
             <div class="pagetitle">
-                <h5>All Features Summary</h5>
-                <h1>MENU OPCIONES</h1>
+                <h5>Sistemas de Administración</h5>
+                <h1><?php echo $titulo?></h1>
             </div>
         </div><!--pageheader-->
         
