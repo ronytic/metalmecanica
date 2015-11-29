@@ -1,5 +1,4 @@
-jQuery.noConflict();
-
+//jQuery.noConflict();
 jQuery(document).ready(function(){
 	
 	// dropdown in leftmenu
