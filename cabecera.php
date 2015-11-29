@@ -48,7 +48,7 @@
                 
                 <li class="dropdown"><a href="<?php echo $folder?>"><span class="iconfa-home"></span> Inicio</a></li>
                 <?php foreach($menu->mostrar($_SESSION['Nivel'],"") as $m){?>
-                <li class="dropdown"><a href="<?php echo $m['menu']?>"><span class="iconfa-pencil"></span> <?php echo $m['nombre']?></a>
+                <li class="dropdown"><a href="<?php echo $m['menu']?>"><span class="iconfa-chevron-right"></span> <?php echo $m['nombre']?></a>
                 	<ul>
                         <?php foreach($submenu->mostrar($_SESSION['Nivel'],$m['codmenu']) as $sm){?>
                     	<li><a href="<?php echo $folder?><?php echo $m['url']?><?php echo $sm['url']?>"><?php echo $sm['nombre']?></a></li>
