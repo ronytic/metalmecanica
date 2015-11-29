@@ -8,7 +8,7 @@ include_once($folder."cabecerahtml.php");
 <div class="widgetbox box-inverse">
     <h4 class="widgettitle">REGISTRO DE PROVEEDOR </h4>
         <div class="widgetcontent wc1">
-            <form name="provedor" class="stdform" method="post" action="proveedor_guardar.php">
+            <form name="provedor" class="stdform" method="post" action="guardar.php">
                 <input name="opcion" value="Nuevo" type="hidden">
                 <table class="table">
                     <tr>
