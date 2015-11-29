@@ -5,8 +5,8 @@
 <div class="mainwrapper">
     
     <div class="header">
-        <div class="logo">
-            <a href="<?php echo $folder?>"><img src="<?php echo $folder?>imagenes/general/metaldugar.jpg" alt="" /></a>
+        <div class="logo" style="margin:0px !important;padding:0px !important">
+            <a href="<?php echo $folder?>"><img src="<?php echo $folder?>imagenes/general/LOGO_3.jpg" alt="" style="height:103px;"/></a>
         </div>
         <div class="headerinner">
             <!-- Inicio Modulo Usuario-->
@@ -16,15 +16,14 @@
                     
                         <div class="userloggedinfo">
                         <!--<img src="images/photos/thumb1.png" alt="" />-->
-                        <div class="userinfo">
-                            <h5><? echo $_SESSION['nombre_me']?> </h5>
-                            <ul>
-                                <li><a href="<?php echo $folder?>login/logout.php">Salir</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-        
+                            <div class="userinfo">
+                                <h5><? echo $_SESSION['nombre_me']?> </h5>
+                                <ul>
+                                    <li><a href="<?php echo $folder?>login/logout.php">Salir</a></li>
+                                </ul>
+                            </div>
+                       </div>
+
                 </li>
             </ul>
            
