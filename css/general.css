@@ -1,0 +1,6 @@
+.resaltar,tr.resaltar td,table.resaltar tr td,td.resaltar{
+    font-weight:bold;    
+}
+.der,tr.der td,table.der tr td,td.der{
+    text-align:right    
+}
