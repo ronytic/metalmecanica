@@ -10,7 +10,7 @@ include_once($folder."cabecerahtml.php");
 $(document).on("ready",function(){
     $(document).on("click",".eliminar",function(e){
         e.preventDefault();    
-        if(confirm("¿Esta seguro que desea Eliminar este Diseño?")){
+        if(confirm("¿Esta seguro que desea Eliminar Registro?")){
             var cod=$(this).attr("rel");
             $.post("eliminar.php",{'cod':cod},function(data){
                 $(".formulario").submit();
