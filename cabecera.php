@@ -65,14 +65,14 @@
         
         <ul class="breadcrumbs">
             <li><a href="<?php echo $folder?>index.php"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
-            <li>Shamcey</li>
+            <li>METALDUGAR </li>
             
         </ul>
         
         <div class="pageheader">
                       <div class="pageicon"><span class="iconfa-laptop"></span></div>
             <div class="pagetitle">
-                <h5>Sistemas de Administración</h5>
+                <h5>Sistema de Administración</h5>
                 <h1><?php echo $titulo?></h1>
             </div>
         </div><!--pageheader-->
