@@ -4,3 +4,9 @@
 .der,tr.der td,table.der tr td,td.der{
     text-align:right    
 }
+.tabla td,.tabla th{
+    padding: 8px;    
+}
+.tabla th{
+    border-bottom:1px solid #dddddd;    
+}
