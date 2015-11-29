@@ -51,7 +51,7 @@
                 <li class="dropdown"><a href="<?php echo $m['menu']?>"><span class="iconfa-pencil"></span> <?php echo $m['nombre']?></a>
                 	<ul>
                         <?php foreach($submenu->mostrar($_SESSION['Nivel'],$m['codmenu']) as $sm){?>
-                    	<li><a href="<?php echo $m['url']?><?php echo $sm['url']?>"><?php echo $sm['nombre']?></a></li>
+                    	<li><a href="<?php echo $folder?><?php echo $m['url']?><?php echo $sm['url']?>"><?php echo $sm['nombre']?></a></li>
                         <?php }?>
                     </ul>
                 </li>
