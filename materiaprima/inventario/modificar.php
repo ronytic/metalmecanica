@@ -16,7 +16,7 @@ include_once($folder."cabecerahtml.php");
 ?>
 <?php include_once($folder."cabecera.php");?>
 <div class="widgetbox box-inverse">
-    <h4 class="widgettitle">REGISTRO DE MATERIA PRIMA </h4>
+    <h4 class="widgettitle">REGISTRO DE NUEVO INVENTARIO DE MATERIA PRIMA </h4>
         <div class="widgetcontent wc1">
             <form name="provedor" class="stdform" method="post" action="actualizar.php">
                 <input name="codinventario" value="<?php echo $cod?>" type="hidden">
