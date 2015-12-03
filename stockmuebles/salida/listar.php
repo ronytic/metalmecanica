@@ -31,7 +31,7 @@ $(document).on("ready",function(){
                 <thead>
                     <tr>
                         <th>PRODUCTO</th>
-                        <th>FECHA</th>
+                        <th>FECHA DE SALIDA</th>
                         <th>
                         </th>
                     </tr>
