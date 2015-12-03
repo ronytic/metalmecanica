@@ -4,7 +4,7 @@ include_once("../../class/inventario.php");
 $inventario=new inventario;
 include_once("../../class/materiaprima.php");
 $materiaprima=new materiaprima;
-$inv=$inventario->mostrarTodoRegistro(" codmateriaprima LIKE '$codmateriaprima' ",1,"");
+$inv=$inventario->mostrarTodoRegistro(" codmateriaprima LIKE '$codmateriaprima' and fecha LIKE '$fecha'",1,"");
 ?>
 <table class="table table-bordered table-striped table-hover">
 <thead>
