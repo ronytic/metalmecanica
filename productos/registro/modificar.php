@@ -5,6 +5,13 @@ include_once("../../class/producto.php");
 $producto=new producto;
 $dat=$producto->mostrarTodoRegistro(" codproducto='$cod'",1,"");
 $dat=array_shift($dat);
+
+
+include_once("../../class/etapa.php");
+$etapa=new etapa;
+$eta=$etapa->mostrarTodoRegistro("",1,"nombre");
+
+
 $titulo="Modificar Producto";
 $folder="../../";
 include_once($folder."cabecerahtml.php");
@@ -29,6 +36,10 @@ include_once($folder."cabecerahtml.php");
                         <td><input type="text" name="unidad" id="unidad" class="input-large" value="<?php echo $dat['unidad']?>"/></td>
                     </tr>
                     <tr>
+                        <td width="200" class="der">TIEMPO DE PRODUCCIÓN</td>
+                        <td><input type="text" name="tiempoproduccion" id="tiempoproduccion" class="input-large" value="<?php echo $dat['tiempoproduccion']?>"/></td>
+                    </tr>
+                    <tr>
                         <td width="200" class="der">DESCRIPCION</td>
                         <td><textarea cols="80" rows="5" name="descripcion" class="input-xxlarge" id="descripcion"><?php echo $dat['descripcion']?></textarea></td>
                     </tr>
@@ -43,4 +54,36 @@ include_once($folder."cabecerahtml.php");
         </form>
     </div><!--widgetcontent-->
 </div><!--widget--><!--widget-->
+<div class="row-fluid">
+    <div class="span6">
+        <div class="widgetbox box-inverse">
+            <h4 class="widgettitle">Etapas </h4>
+            <div class="widgetcontent wc1" id="respuestaformulario">
+                Etapa:
+                <select class="input-large" id="etapa">
+                <?php foreach($eta as $et){?>
+                <option value="<?php echo $et['codetapa']?>"><?php echo $et['nombre']?></option>
+                <?php }?>
+                </select>
+                <a href="#" id="agregaretapa" class="btn btn-primary">Agregar</a>
+                <div class="listadoetapas"></div>
+            </div>
+        </div>
+    </div>
+    <div class="span6">
+        <div class="widgetbox box-inverse">
+            <h4 class="widgettitle">Materia Prima </h4>
+            <div class="widgetcontent wc1" id="respuestaformulario">
+                Materia Prima:
+                <select class="input-large" id="etapa">
+                <?php foreach($mat as $n){?>
+                <option value="<?php echo $et['codmateriaprima']?>"><?php echo $et['nombre']?></option>
+                <?php }?>
+                </select>
+                <a href="#" id="agregaretapa" class="btn btn-primary">Agregar</a>
+                <div class="listadoetapas"></div>   
+            </div>
+        </div>
+    </div>
+</div>
 <?php include_once($folder."pie.php");?>

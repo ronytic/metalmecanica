@@ -7,6 +7,7 @@ $valores=array("codigo"=>"'$codigo'",
                 "nombre"=>"'$nombre'",
                 "unidad"=>"'$unidad'",
                 "descripcion"=>"'$descripcion'",
+                "tiempoproduccion"=>"'$tiempoproduccion'",
             );
 $producto->insertarRegistro($valores);
 $folder="../../";

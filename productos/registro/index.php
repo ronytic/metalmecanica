@@ -24,6 +24,10 @@ include_once($folder."cabecerahtml.php");
                         <td><input type="text" name="unidad" id="unidad" class="input-large" /></td>
                     </tr>
                     <tr>
+                        <td width="200" class="der">TIEMPO DE PRODUCCIÓN</td>
+                        <td><input type="text" name="tiempoproduccion" id="tiempoproduccion" class="input-large"/></td>
+                    </tr>
+                    <tr>
                         <td width="200" class="der">DESCRIPCIÓN</td>
                         <td><input type="text" name="descripcion" id="descripcion" class="input-large" /></td>
                     </tr>
