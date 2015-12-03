@@ -11,11 +11,70 @@ include_once("../../class/etapa.php");
 $etapa=new etapa;
 $eta=$etapa->mostrarTodoRegistro("",1,"nombre");
 
+include_once("../../class/materiaprima.php");
+$materiaprima=new materiaprima;
+$mat=$materiaprima->mostrarTodoRegistro("",1,"nombre");
 
 $titulo="Modificar Producto";
 $folder="../../";
 include_once($folder."cabecerahtml.php");
 ?>
+<script language="javascript">
+$(document).on("ready",function(){
+    $("#agregaretapa").click(function(e) {
+        e.preventDefault();
+        var codproducto=$("[name=codproducto]").val();
+        var codetapa=$("#codetapa").val();
+        $.post("agregaretapa.php",{codetapa:codetapa,"codproducto":codproducto},function(){
+        listaretapas();    
+        });
+    });
+    $(document).on("click",".eliminaretapa",function(e){
+        e.preventDefault();
+        if(confirm("¿Esta seguro que desea Eliminar Registro?")){
+            var cod=$(this).attr("rel");
+            $.post("eliminaretapa.php",{'cod':cod},function(data){
+                 listaretapas(); 
+            });
+        }
+ 
+    })
+    $("#agregarmateriaprima").click(function(e) {
+        e.preventDefault();
+        
+        var codproducto=$("[name=codproducto]").val();
+        var codmateriaprima=$("#codmateriaprima").val();
+        var cantidadmateriaprima=$("#cantidadmateriaprima").val();
+        $.post("agregarmateriaprima.php",{"codmateriaprima":codmateriaprima,"codproducto":codproducto,"cantidad":cantidadmateriaprima},function(){
+            listarmateriaprima();    
+        });
+    });
+    $(document).on("click",".eliminarmateriaprima",function(e){
+        e.preventDefault();
+        if(confirm("¿Esta seguro que desea Eliminar Registro?")){
+            var cod=$(this).attr("rel");
+            $.post("eliminarmateriaprima.php",{'cod':cod},function(data){
+                 listarmateriaprima(); 
+            });
+        }
+ 
+    })
+    listaretapas();
+    listarmateriaprima(); 
+});
+function listaretapas(){
+    var codproducto=$("[name=codproducto]").val();
+    $.post("listaretapas.php",{'codproducto':codproducto},function(data){
+        $(".listadoetapas").html(data)
+    });
+}
+function listarmateriaprima(){
+    var codproducto=$("[name=codproducto]").val();
+    $.post("listarmateriaprima.php",{'codproducto':codproducto},function(data){
+        $(".listadomateriaprima").html(data)
+    });
+}
+</script>
 <?php include_once($folder."cabecera.php");?>
 <div class="widgetbox box-inverse">
     <h4 class="widgettitle">REGISTRO DE PRODUCTO</h4>
@@ -60,9 +119,9 @@ include_once($folder."cabecerahtml.php");
             <h4 class="widgettitle">Etapas </h4>
             <div class="widgetcontent wc1" id="respuestaformulario">
                 Etapa:
-                <select class="input-large" id="etapa">
+                <select class="input-large" id="codetapa">
                 <?php foreach($eta as $et){?>
-                <option value="<?php echo $et['codetapa']?>"><?php echo $et['nombre']?></option>
+                <option value="<?php echo $et['codetapa']?>"><?php echo $et['nombre']?> - <?php echo $et['codigo']?></option>
                 <?php }?>
                 </select>
                 <a href="#" id="agregaretapa" class="btn btn-primary">Agregar</a>
@@ -74,14 +133,23 @@ include_once($folder."cabecerahtml.php");
         <div class="widgetbox box-inverse">
             <h4 class="widgettitle">Materia Prima </h4>
             <div class="widgetcontent wc1" id="respuestaformulario">
-                Materia Prima:
-                <select class="input-large" id="etapa">
-                <?php foreach($mat as $n){?>
-                <option value="<?php echo $et['codmateriaprima']?>"><?php echo $et['nombre']?></option>
-                <?php }?>
-                </select>
-                <a href="#" id="agregaretapa" class="btn btn-primary">Agregar</a>
-                <div class="listadoetapas"></div>   
+                <table class="tabla">
+                    <tr><th>Materia Prima</th><th>Cantidad</th></tr>
+                    <tr>
+                        <td>
+                        <select class="input-large" id="codmateriaprima">
+                        <?php foreach($mat as $m){?>
+                        <option value="<?php echo $m['codmateriaprima']?>"><?php echo $m['nombre']?> - Cod:<?php echo $m['codigo']?>, Unidad:<?php echo $m['unidad']?></option>
+                        <?php }?>
+                        </select>
+                        </td>
+                        <td>
+                        <input type="number" value="0" min="0" id="cantidadmateriaprima"  class="input-small der">
+                        </td>
+                        <td><a href="#" id="agregarmateriaprima" class="btn btn-primary">Agregar</a></td>
+                    </tr>
+                </table>
+                <div class="listadomateriaprima"></div>   
             </div>
         </div>
     </div>
