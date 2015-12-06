@@ -73,7 +73,7 @@ h1,h2,h3,h4,h5 { font-weight: normal; line-height: normal; }
 .loginpanelinner { position: relative; top: -150px; left: -50%; }
 .loginpanelinner .logo { text-align: center; padding: 20px 0; }
 
-.inputwrapper input { border: 0; padding: 10px; background: #fff; width: 250px; }
+.inputwrapper input { border: 0; padding: 10px; width: 250px; }
 .inputwrapper input:active, .inputwrapper input:focus { background: #fff; border: 0; }
 .inputwrapper button {
 		  display: block; border: 1px solid #0c57a3; padding: 10px; background: #0972dd; width: 100%;
