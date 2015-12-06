@@ -19,70 +19,88 @@ $folder="../";
     <!--Basic Styles-->
     <link href="<?php echo $folder?>css/core/bootstrap.min.css" rel="stylesheet" />
     <link id="bootstrap-rtl-link" href="#" rel="stylesheet" />
-    <link href="<?php echo $folder?>css/core/assets/font-awesome.min.css" rel="stylesheet" />
-
-    <!--Fonts-->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
-
+    <link href="<?php echo $folder?>css/core/font-awesome.min.css" rel="stylesheet" />
     <!--Beyond styles-->
-    <link id="beyond-link" href="<?php echo $folder?>css/core/assets/beyond.min.css" rel="stylesheet" />
-    <link href="<?php echo $folder?>css/core/assets/demo.min.css" rel="stylesheet" />
-    <link href="<?php echo $folder?>css/core/assets/animate.min.css" rel="stylesheet" />
-    <link id="beyond-link" href="<?php echo $folder?>/css/core/assets/orange.min.css" rel="stylesheet" />
+    <link id="beyond-link" href="<?php echo $folder?>css/core/style.default.css" rel="stylesheet" />
+    <link id="beyond-link" href="<?php echo $folder?>css/core/style.navyblue.css" rel="stylesheet" />
+    
+    <link href="<?php echo $folder?>css/core/animate.min.css" rel="stylesheet" />
     <link id="skin-link" href="#" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body{
+            background-image:url(../imagenes/fondos/<?php echo rand(1,4)?>.jpg);background-size:cover    
+        }
+        input[type=text],input[type=password]{
+            border:#71B8EE solid 1px;    
+        }
+        input[type=text]:hover,input[type=password]:hover{
+            border:#71B8EE solid 1px;    
+        }
+        input[type=text]:focus,input[type=password]:focus{
+            border:#71B8EE solid 1px;    
+        }
+        .widgetcontent{
+            text-align:center;   
 
+        }
+        .widgetcontent .logo{
+            padding:5px;
+        }
+        .widgetcontent .logo img{
+            border-radius:10px;
+        }
+        
+    </style>
 </head>
 <!--Head Ends-->
 <!--Body-->
-<body>
-    <div class="login-container animated fadeInDown">
-        <div class="loginbox bg-white">
-            <div class="loginbox-title">Acceso al Sistema</div>
-            <div class="loginbox-social">
-                <img src="../imagenes/logo/logo.jpg" width="250" class="img-thumbnail">
-            </div>
-            <?php
+<body style="">
+   
+<div class="loginpanel">
+    <div class="loginpanelinner">
+        <div class="widgetbox box-info">
+            <h2 class="widgettitle">Acceso al Sistema</h2>
+            <div class="widgetcontent">
+            <div class="logo animate0 bounceIn"><img src="../imagenes/general/LOGO_3.jpg" alt="" /></div>
+            <form action="login.php" method="post" id="login">
+                 <input type="hidden" name="u" value="<?php echo $_GET['u'];?>" />
+                <?php
                 if(isset($_GET['incompleto'])){
                 ?>
-                <div class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    Porfavor llene todos los datos necesarios para poder acceder
+                <div class="inputwrapper animate1 bounceIn">
+                    <div class="alert alert-error">Ingrese los Datos</div>
                 </div>
-                <?php
-                }
-                if(isset($_GET['error'])){
+                <?php }?>
+                <?php if(isset($_GET['error'])){
                 ?>
-                <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    Los Datos Introducidos son incorrectos Intente Nuevamente
+                <div class="inputwrapper animate1 bounceIn">
+                    <div class="alert alert-warning">Datos Incorrectos</div>
                 </div>
-                <?php
-                }
-                ?>
-            <div class="loginbox-or">
-                <div class="or-line"></div>
-                <div class="or"> &copy; </div>
-            </div>
-            <form action="login.php" method="post" id="login">
-            <input type="hidden" name="u" value="<?php echo $_GET['u'];?>" />
-            <div class="loginbox-textbox">
-           
-                <input type="text" class="form-control" placeholder="Usuario" name="usuario" id="usuario" autofocus/>
-            </div>
-            <div class="loginbox-textbox">
-                <input type="password" class="form-control" placeholder="Contraseña" name="pass" id="pass"/>
-            </div>
-            <div class="loginbox-submit">
-                <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
-            </div>
+                <?php }?>
+                <div class="inputwrapper animate1 bounceIn">
+                    <input type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario" class="input-small"/>
+                </div>
+                <div class="inputwrapper animate2 bounceIn">
+                    <input type="password" name="pass" id="pass" placeholder="Ingrese su contraseña" />
+                </div>
+                <div class="inputwrapper animate3 bounceIn">
+                    <input type="submit" value="INGRESAR" class="btn btn-info">
+                </div>
+                
             </form>
+            </div>
         </div>
-    </div>
+    </div><!--loginpanelinner-->
+</div><!--loginpanel-->
+
+<div class="loginfooter">
+    <p>&copy; <?php echo date('Y'); ?>. MetalDugar.</p>
+</div>
+
 
     <!--Basic Scripts-->
-    <script src="<?php echo $folder?>js/core/jquery.min.js"></script>
+    <script src="<?php echo $folder?>js/core/jquery-1.9.1.min.js"></script>
     <script src="<?php echo $folder?>js/core/bootstrap.min.js"></script>
-    <script src="<?php echo $folder?>js/core/plugins/jquery.slimscroll.min.js"></script>
 
     <!--Beyond Scripts
     <script src="<?php echo $folder?>js/core/assets/beyond.min.js"></script>-->
