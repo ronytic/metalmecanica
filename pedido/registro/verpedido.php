@@ -47,7 +47,7 @@ include_once($folder."cabecerahtml.php");
                             <th>Celular Cliente</th>
                             <th>Fecha Estimada de Entrega</th>
                             <th>Fecha Estimada de Entrega Real</th>
-                            <th></th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tr>
@@ -55,12 +55,14 @@ include_once($folder."cabecerahtml.php");
                         <td><input type="text" name="cicliente"  class="input-small" maxlength="12" value="<?php echo $p['cicliente']?>"></td>
                         <td><input type="text" name="celularcliente"  class="input-small" maxlength="12" value="<?php echo $p['celularcliente']?>"></td>
                         <td><input type="date" name="fechaentregaestimada"  class="input-medium" required value="<?php echo $p['fechaentregaestimada']?>"></td>
-                        <td><input type="date" name="fechaentregareal"  class="input-medium" required value="<?php echo $p['fechaentregaestimada']?>"></td>
-                        <td>
+                        <td><input type="date" name="fechaentregareal"  class="input-medium"  value=""></td>
+                        <td><select class="input-small" name="estado"><option value="0" <?php echo $p['estado']=="0"?'selected="selected"':''?>>Producción</option><option value="1" <?php echo $p['estado']=="1"?'selected="selected"':''?>>Concluido</option></select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="56">
                             <input type="submit" class="btn btn-primary" value="Modificar Datos" id="pedido">
-
                             <a href="listar.php" class="btn">Listar Pedidos</a>
-                            </td>
+                        </td>
                     </tr>
                 </table>
                 </form>
