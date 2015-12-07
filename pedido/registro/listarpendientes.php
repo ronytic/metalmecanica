@@ -12,7 +12,7 @@ $(document).on("ready",function(){
         e.preventDefault();    
         if(confirm("¿Esta seguro que desea Eliminar Registro?")){
             var cod=$(this).attr("rel");
-            $.post("eliminar.php",{'cod':cod},function(data){
+            $.post("eliminarpendiente.php",{'cod':cod},function(data){
                 $(".formulario").submit();
             });
         }
