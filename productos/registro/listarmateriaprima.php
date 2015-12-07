@@ -8,7 +8,7 @@ $materiaprima=new materiaprima;
 ?>
 <table class="table table-bordered table-striped table-hover">
 <thead>
-<tr><th width="50">Nº</th><th>Código</th><th>Nombre</th><th>Cantidad</th></tr>
+<tr><th width="50">Nº</th><th>Código</th><th>Nombre</th><th>Cantidad</th><th>Unidad</th></tr>
 </thead>
 <?php
 foreach($dat as $d){$i++;
@@ -19,7 +19,8 @@ $et=array_shift($et);
     <td class="der"><?php echo $i?></td>
     <td><?php echo $et['codigo']?></td>
     <td><?php echo $et['nombre']?></td>
-    <td><?php echo $d['cantidad']?></td>
+    <td class="der"><?php echo $d['cantidad']?></td>
+    <td><?php echo $et['unidad']?></td>
     <td width="15"><a href="eliminar.php" class="eliminarmateriaprima" title="Eliminar" rel="<?php echo $d['codproductomateriaprima']?>"><span class="icon-trash"></span></a></td>
 </tr>
 <?php    
