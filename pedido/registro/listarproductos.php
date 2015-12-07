@@ -99,7 +99,14 @@ $anular='no';
 </tr>
 <?php }?>
 </table>
+<?php
+include_once("../../class/pedidopendiente.php");
+$pedidopendiente=new pedidopendiente;
+$dpp=$pedidopendiente->mostrarTodoRegistro("codpedidopendiente=".$_POST['codpedidopendiente'],1,"");
+$dpp=array_shift($dpp);
+?>
 <form id="formulario" method="post">
+<input type="hidden" name="codpedidopendiente" value="<?php echo $_POST['codpedidopendiente']?>">
 <table class="tabla table-bordered">
     <thead>
         <tr>
@@ -111,12 +118,19 @@ $anular='no';
         </tr>
     </thead>
     <tr>
-        <td><input type="text" name="nombrecliente"  class="input-medium" placeholder=""></td>
-        <td><input type="text" name="cicliente"  class="input-small" maxlength="12"></td>
-        <td><input type="text" name="celularcliente"  class="input-small" maxlength="12"></td>
-        <td><input type="date" name="fechaentregaestimada"  class="input-medium" required></td>
-        <td><input type="button" class="btn btn-default" value="Guardar Pedido como Pendiente" id="pendiente">
-            <input type="button" class="btn btn-primary" value="Realizar Pedido" id="pedido"></td>
+        <td><input type="text" name="nombrecliente"  class="input-medium" placeholder="" value="<?php echo $dpp['nombrecliente']?>"></td>
+        <td><input type="text" name="cicliente"  class="input-small" maxlength="12" value="<?php echo $dpp['cicliente']?>"></td>
+        <td><input type="text" name="celularcliente"  class="input-small" maxlength="12" value="<?php echo $dpp['celularcliente']?>"></td>
+        <td><input type="date" name="fechaentregaestimada"  class="input-medium" required value="<?php echo $dpp['fechaentregaestimada']?>"></td>
+        <td>
+            <?php if($_POST['codpedidopendiente']==""){?>
+            <input type="button" class="btn btn-default" value="Guardar Pedido como Pendiente" id="pendiente">
+             <?php }?>
+            <?php if($anular=='no'){?>
+            <input type="button" class="btn btn-primary" value="Realizar Pedido" id="pedido">
+            <?php }?>
+            <a href="./" class="btn">Cancelar</a>
+            </td>
     </tr>
 </table>
 
