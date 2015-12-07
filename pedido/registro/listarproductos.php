@@ -114,7 +114,7 @@ $anular='no';
         <td><input type="text" name="nombrecliente"  class="input-medium" placeholder=""></td>
         <td><input type="text" name="cicliente"  class="input-small" maxlength="12"></td>
         <td><input type="text" name="celularcliente"  class="input-small" maxlength="12"></td>
-        <td><input type="date" name="fechaentregaestimada"  class="input-medium" maxlength="12" required></td>
+        <td><input type="date" name="fechaentregaestimada"  class="input-medium" required></td>
         <td><input type="button" class="btn btn-default" value="Guardar Pedido como Pendiente" id="pendiente">
             <input type="button" class="btn btn-primary" value="Realizar Pedido" id="pedido"></td>
     </tr>
