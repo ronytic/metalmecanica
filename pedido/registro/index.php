@@ -30,6 +30,12 @@ $(document).on("ready",function(){
             listarproductos();    
         });
     });
+    $("#borrartodo").click(function(e) {
+        e.preventDefault();
+        $.post("borrartodo.php",{},function(){
+            listarproductos();    
+        });
+    });
     $(document).on("click",".eliminarproducto",function(e){
         e.preventDefault();
         if(confirm("¿Esta seguro que desea Eliminar Registro?")){
@@ -55,7 +61,7 @@ $(document).on("ready",function(){
     listarproductos(); 
 });
 function listarproductos(){
-    var codpedidopendiente=$("[name=codpedidopendiente]").val();
+    var codpedidopendiente="<?php echo $_GET['codpedidopendiente']?>";
     $.post("listarproductos.php",{"codpedidopendiente":codpedidopendiente},function(data){
         $(".listadoproductos").html(data)
     });
@@ -81,6 +87,7 @@ function listarproductos(){
                         <input type="number" value="0" min="0" id="cantidadproducto"  class="input-small der">
                         </td>
                         <td><a href="#" id="agregarproducto" class="btn btn-primary">Agregar</a></td>
+                        <td><a href="#" id="borrartodo" class="btn btn">Borrar Todo</a></td>
                     </tr>
                 </table>
                 <div class="listadoproductos"></div>   
