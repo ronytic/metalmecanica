@@ -40,7 +40,18 @@ $(document).on("ready",function(){
         }
  
     })
-   
+    $(document).on("click","#pendiente",function(e){
+        e.preventDefault();
+        if(confirm("¿ESTA SEGURO DE GUARDAR ESTE PEDIDO COMO PENDIENTE?\n")){
+            $("#formulario").attr("action","pendiente.php").submit();
+        }
+    }) 
+    $(document).on("click","#pedido",function(e){
+        e.preventDefault();
+        if(confirm("¿ESTA SEGURO DE REALIZAR ESTE PEDIDO?\n SE DESCONTARA LA MATERIA PRIMA DE INVENTARIO")){
+            $("#formulario").attr("action","pedido.php").submit();
+        }
+    })  
     listarproductos(); 
 });
 function listarproductos(){
