@@ -29,7 +29,7 @@ $(document).on("ready",function(){
                     <tr>
                         <th>Nombre Cliente</th>
                         <th>C.I. Cliente</th>
-                        <th>Fecha Estimada de Entrega</th>
+                        <th>Fecha Entrega Estimada</th>
                         <th>
                         </th>
                     </tr>
