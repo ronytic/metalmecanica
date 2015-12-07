@@ -2,7 +2,7 @@
 include_once("../../login/check.php");
 include_once("../../class/pedidotemporal.php");
 $pedidotemporal=new pedidotemporal;
-
+$pedidotemporal->vaciar();
 include_once("../../class/pedidopendientedetalle.php");
 $pedidopendientedetalle=new pedidopendientedetalle;
 
