@@ -55,8 +55,8 @@ $(document).on("ready",function(){
     listarproductos(); 
 });
 function listarproductos(){
-    var codproducto=$("[name=codproducto]").val();
-    $.post("listarproductos.php",{},function(data){
+    var codpedidopendiente=$("[name=codpedidopendiente]").val();
+    $.post("listarproductos.php",{"codpedidopendiente":codpedidopendiente},function(data){
         $(".listadoproductos").html(data)
     });
 }
