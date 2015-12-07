@@ -10,3 +10,15 @@
 .tabla th{
     border-bottom:1px solid #dddddd;    
 }
+tr td.error{
+    background-color:#FFC5C6 !important;    
+}
+tr:hover td.error{
+    background-color:#FFA1A3 !important;    
+}
+tr td.correcto{
+    background-color:#C5FFC6 !important;    
+}
+tr:hover td.correcto{
+    background-color:#91EB93 !important;    
+}
