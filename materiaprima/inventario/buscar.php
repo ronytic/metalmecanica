@@ -4,6 +4,7 @@ include_once("../../class/inventario.php");
 $inventario=new inventario;
 include_once("../../class/materiaprima.php");
 $materiaprima=new materiaprima;
+$fecha=$fecha!=""?$fecha:'%';
 $inv=$inventario->mostrarTodoRegistro(" codmateriaprima LIKE '$codmateriaprima' and fecha LIKE '$fecha'",1,"");
 ?>
 <table class="table table-bordered table-striped table-hover">

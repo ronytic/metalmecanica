@@ -43,7 +43,7 @@ $(document).on("ready",function(){
                             <option value="<?php echo $m['codmateriaprima']?>"><?php echo $m['nombre']?> - <?php echo $m['codigo']?> - <?php echo $m['unidad']?></option>
                             <?php }?>
                         </select></td>
-                    <td><input type="date" name="fecha" value="<?php echo date("Y-m-d")?>" required></td>
+                    <td><input type="date" name="fecha" value=""></td>
                     <td><input type="submit" value="Buscar" class="btn btn-info"></td>
                 </tr>
             </table>
