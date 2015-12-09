@@ -27,6 +27,9 @@ $productoetapa=new productoetapa;
 include_once("../../class/pedidoetapa.php");
 $pedidoetapa=new pedidoetapa;
 
+include_once("../../class/pedidoobservacion.php");
+$pedidoobservacion=new pedidoobservacion;
+
 include_once("../../class/etapa.php");
 $etapa=new etapa;
 $eta=$etapa->mostrarTodoRegistro("",1,"nombre");
@@ -154,7 +157,7 @@ include_once($folder."cabecerahtml.php");
                         </td>
                     </tr>
                     <tr class="resaltar">
-                        <td width="15">Nº</td><td>Etapa</td><td></td>
+                        <td width="15">Nº</td><td>Etapa</td><td width="15"></td>
                     </tr>
                     <?php 
                     $i=0;
@@ -188,6 +191,49 @@ include_once($folder."cabecerahtml.php");
                                 }
                                 }?>
                         </select>     
+                        <br>
+                        <input type="submit" value="Guardar" class="btn btn-info">
+                        </form>
+                        </td>
+                    </tr>
+                </table>
+                <?php
+                $pedidoobs=$pedidoobservacion->mostrarTodoRegistro("codpedidodetalle=".$dat['codpedidodetalle']);
+                $totalobservaciones=count($pedidoobs);
+                ?>
+                <a name="observacion"></a>
+                <table class="table table-bordered table-striped table-hover tablanoancha enlinea">
+                <thead>
+                    <tr><th colspan="3">Observaciones</th></tr>
+                </thead>
+                    <tr>
+                        <td class="resaltar der" colspan="3">
+                        Total: <?php echo $totalobservaciones?>
+                        </td>
+                    </tr>
+                    <tr class="resaltar">
+                        <td width="10">Nº</td><td>Observación</td><td width="15"></td>
+                    </tr>
+                    <?php 
+                    $i=0;
+                    foreach($pedidoobs as $pobs){$i++;
+                    ?>
+                    <tr class="">
+                        <td class="der"><?php echo $i;?></td>
+                        <td><?php echo $pobs['observacion'];?></td>
+                        <td><a href="observacion/eliminar.php?cpo=<?php echo $pobs['codpedidoobservacion']?>&codpedidodetalle=<?php echo $_GET['cpd']?>&codpedido=<?php echo $_GET['cpe']?>&codproducto=<?php echo $_GET['cpro']?>" class="eliminar" title="Eliminar" rel="<?php echo $pe['codpedidoobservacion']?>"><span class="icon-trash"></span></a></td>
+                    </tr>
+                    <?php    
+                    }?>
+                    <tr>
+                        <td colspan="3">
+                        <form action="observacion/guardarobservacion.php" method="post">
+                        <input type="hidden" name="codproducto" value="<?php echo $_GET['cpro']?>">
+                        <input type="hidden" name="codpedido" value="<?php echo $_GET['cpe']?>">
+                        <input type="hidden" name="codpedidodetalle" value="<?php echo $_GET['cpd']?>">
+                        Observación:<br>
+                        <textarea name="Observacion"></textarea>
+
                         <br>
                         <input type="submit" value="Guardar" class="btn btn-info">
                         </form>
