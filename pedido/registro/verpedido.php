@@ -18,6 +18,12 @@ $pro=$producto->mostrarTodoRegistro("",1,"nombre,codigo,unidad");
 include_once("../../class/productomateriaprima.php");
 $productomateriaprima=new productomateriaprima;
 
+include_once("../../class/productoetapa.php");
+$productoetapa=new productoetapa;
+
+include_once("../../class/pedidoetapa.php");
+$pedidoetapa=new pedidoetapa;
+
 include_once("../../class/etapa.php");
 $etapa=new etapa;
 $eta=$etapa->mostrarTodoRegistro("",1,"nombre");
@@ -26,7 +32,7 @@ include_once("../../class/materiaprima.php");
 $materiaprima=new materiaprima;
 $mat=$materiaprima->mostrarTodoRegistro("",1,"nombre");
 
-$titulo="Ver Pedido";
+$titulo="Ver Datos del Pedido";
 $folder="../../";
 include_once($folder."cabecerahtml.php");
 ?>
@@ -45,23 +51,33 @@ include_once($folder."cabecerahtml.php");
                             <th>Nombre Cliente</th>
                             <th>C.I. Cliente</th>
                             <th>Celular Cliente</th>
+                            <th>Fecha de Pedido</th>
                             <th>Fecha Estimada de Entrega</th>
                             <th>Fecha Estimada de Entrega Real</th>
-                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tr>
                         <td><input type="text" name="nombrecliente"  class="input-medium" placeholder="" value="<?php echo $p['nombrecliente']?>"></td>
                         <td><input type="text" name="cicliente"  class="input-small" maxlength="12" value="<?php echo $p['cicliente']?>"></td>
                         <td><input type="text" name="celularcliente"  class="input-small" maxlength="12" value="<?php echo $p['celularcliente']?>"></td>
+                        <td><?php echo fecha2Str($p['fecha'])?> <?php echo hora2Str($p['hora'])?></td>
                         <td><input type="date" name="fechaentregaestimada"  class="input-medium" required value="<?php echo $p['fechaentregaestimada']?>"></td>
                         <td><input type="date" name="fechaentregareal"  class="input-medium"  value=""></td>
-                        <td><select class="input-small" name="estado"><option value="0" <?php echo $p['estado']=="0"?'selected="selected"':''?>>Producción</option><option value="1" <?php echo $p['estado']=="1"?'selected="selected"':''?>>Concluido</option></select></td>
+                    </tr>
+                    <tr>
+                        <td>Estado<br>
+                            <select class="input-medium" name="estado"><option value="0" <?php echo $p['estado']=="0"?'selected="selected"':''?>>Producción</option><option value="1" <?php echo $p['estado']=="1"?'selected="selected"':''?>>Concluido</option></select>
+                        </td>
+                        <td colspan="5">
+                            Detalle
+                            <br>
+                            <textarea name="detalle" cols="850" style="width:680px;height:100px"><?php echo $p['detalle']?></textarea>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="56">
                             <input type="submit" class="btn btn-primary" value="Modificar Datos" id="pedido">
-                            <a href="listar.php" class="btn">Listar Pedidos</a>
+                            <a href="listar.php" class="btn">Volver al Listado de Pedidos</a>
                         </td>
                     </tr>
                 </table>
@@ -69,7 +85,7 @@ include_once($folder."cabecerahtml.php");
                 <br>
                 <table class="table table-bordered table-striped table-hover">
                 <thead>
-                <tr><th width="15">Nº</th><th width="50">Código</th><th>Producto</th><th width="25">Cant.</th><th width="50">Unidad</th><th width="50">Tiempo Produc</th><th colspan="4">Materia Prima</th></tr>
+                <tr><th width="15">Nº</th><th width="50">Código</th><th>Producto</th><th width="25">Cant.</th><th width="50">Unidad</th><th width="50">Tiempo Produc</th><th colspan="4">Materia Prima</th><th>Etapas Realizadas</th></tr>
                 </thead>
                 <?php
                 $totales=array();
@@ -79,8 +95,10 @@ include_once($folder."cabecerahtml.php");
                 $pro=array_shift($pro);
                 
                 $promat=$productomateriaprima->mostrarTodoRegistro("codproducto=".$d['codproducto']);
-                
-                
+                $proet=$productoetapa->mostrarTodoRegistro("codproducto=".$d['codproducto']);
+                $totaletapas=count($proet);
+                $pedet=$pedidoetapa->mostrarTodoRegistro("codpedidodetalle=".$d['codpedidodetalle']);
+                $etapasrealizadas=count($pedet);
                 ?>
                 <tr class="default">
                     <td class="der"><?php echo $i?></td>
@@ -93,7 +111,8 @@ include_once($folder."cabecerahtml.php");
                     <td class="resaltar"  width="25">Cant.</td>
                     <td class="resaltar" width="60">Unidad</td>
                     <td class="resaltar" width="25">Total</td>
-                    <td width="15"></td>
+                    <td class="resaltar der" width="25"><?php echo $etapasrealizadas;?> de <?php echo $totaletapas?></td>
+                    <td width="15"><a href="controlproduccion.php?cpd=<?php echo $d['codpedidodetalle']?>&cpe=<?php echo $_GET['codpedido']?>&cpro=<?php echo $d['codproducto']?>" class="btn">Control de Producción</a></td>
                 </tr>
                     <?php foreach($promat as $pm){
                         $mp=$materiaprima->mostrarTodoRegistro("codmateriaprima=".$pm['codmateriaprima']);
@@ -106,6 +125,7 @@ include_once($folder."cabecerahtml.php");
                         <td class="der"><?php echo $pm['cantidad']?></td>
                         <td><?php echo $mp['unidad']?></td>
                         <td class="der resaltar"><?php echo $pm['cantidad']*$d['cantidad']?></td>
+                        <td></td>
                         <td></td>
                         </tr>
                     <?php }?>
