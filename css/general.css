@@ -10,6 +10,9 @@
 .tabla th{
     border-bottom:1px solid #dddddd;    
 }
+.tabla tr td{
+    border-bottom:1px solid #dddddd;
+}
 tr td.error{
     background-color:#FFC5C6 !important;    
 }
