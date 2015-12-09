@@ -78,7 +78,7 @@ $folder="../";
                 </div>
                 <?php }?>
                 <div class="inputwrapper animate1 bounceIn">
-                    <input type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario" class="input-small"/>
+                    <input type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario" class="input-small" autofocus/>
                 </div>
                 <div class="inputwrapper animate2 bounceIn">
                     <input type="password" name="pass" id="pass" placeholder="Ingrese su contraseña" />
