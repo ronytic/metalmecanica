@@ -99,6 +99,8 @@ include_once($folder."cabecerahtml.php");
                 $totaletapas=count($proet);
                 $pedet=$pedidoetapa->mostrarTodoRegistro("codpedidodetalle=".$d['codpedidodetalle']);
                 $etapasrealizadas=count($pedet);
+                $porcentaje=$etapasrealizadas*100/$totaletapas;
+                $porcentaje=round($porcentaje,2);
                 ?>
                 <tr class="default">
                     <td class="der"><?php echo $i?></td>
@@ -111,7 +113,12 @@ include_once($folder."cabecerahtml.php");
                     <td class="resaltar"  width="25">Cant.</td>
                     <td class="resaltar" width="60">Unidad</td>
                     <td class="resaltar" width="25">Total</td>
-                    <td class="resaltar der" width="25"><?php echo $etapasrealizadas;?> de <?php echo $totaletapas?></td>
+                    <td class="resaltar der" width="25">
+                    <div class="progress progress-striped active" style="margin-bottom:5px;">
+                        <div class="bar" style="width: <?php echo $porcentaje?>%"></div>
+                    </div>
+                    <?php echo $etapasrealizadas;?> de <?php echo $totaletapas?> (<?php echo $porcentaje?>%)
+                    </td>
                     <td width="15"><a href="controlproduccion.php?cpd=<?php echo $d['codpedidodetalle']?>&cpe=<?php echo $_GET['codpedido']?>&cpro=<?php echo $d['codproducto']?>" class="btn">Control de Producción</a></td>
                 </tr>
                     <?php foreach($promat as $pm){
