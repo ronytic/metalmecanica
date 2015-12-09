@@ -115,7 +115,7 @@ include_once($folder."cabecerahtml.php");
                 
                 <tr class="default">
                     <td class="resaltar der" width="15">Nº</td>
-                    <td class="resaltar">Nombre</td>
+                    <td class="resaltar" width="125">Nombre</td>
                     <td class="resaltar"  width="25">Cant.</td>
                     <td class="resaltar" width="60">Unidad</td>
                     <td class="resaltar" width="25">Total</td>
@@ -157,7 +157,7 @@ include_once($folder."cabecerahtml.php");
                         </td>
                     </tr>
                     <tr class="resaltar">
-                        <td width="15">Nº</td><td>Etapa</td><td width="15"></td>
+                        <td width="15">Nº</td><td width="180">Etapa</td><td width="15"></td>
                     </tr>
                     <?php 
                     $i=0;
@@ -204,7 +204,7 @@ include_once($folder."cabecerahtml.php");
                 <a name="observacion"></a>
                 <table class="table table-bordered table-striped table-hover tablanoancha enlinea">
                 <thead>
-                    <tr><th colspan="3">Observaciones</th></tr>
+                    <tr><th colspan="3" width="225">Observaciones</th></tr>
                 </thead>
                     <tr>
                         <td class="resaltar der" colspan="3">
