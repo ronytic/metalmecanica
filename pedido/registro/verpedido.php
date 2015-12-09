@@ -24,6 +24,9 @@ $productoetapa=new productoetapa;
 include_once("../../class/pedidoetapa.php");
 $pedidoetapa=new pedidoetapa;
 
+include_once("../../class/pedidoobservacion.php");
+$pedidoobservacion=new pedidoobservacion;
+
 include_once("../../class/etapa.php");
 $etapa=new etapa;
 $eta=$etapa->mostrarTodoRegistro("",1,"nombre");
@@ -85,7 +88,7 @@ include_once($folder."cabecerahtml.php");
                 <br>
                 <table class="table table-bordered table-striped table-hover">
                 <thead>
-                <tr><th width="15">Nº</th><th width="50">Código</th><th>Producto</th><th width="25">Cant.</th><th width="50">Unidad</th><th width="50">Tiempo Produc</th><th colspan="4">Materia Prima</th><th>Etapas Realizadas</th></tr>
+                <tr><th width="15">Nº</th><th width="50">Código</th><th>Producto</th><th width="25">Cant.</th><th width="50">Unidad</th><th width="50">Tiempo Produc</th><th colspan="4">Materia Prima</th><th width="80">Etapas Realizadas</th></tr>
                 </thead>
                 <?php
                 $totales=array();
@@ -101,6 +104,10 @@ include_once($folder."cabecerahtml.php");
                 $etapasrealizadas=count($pedet);
                 $porcentaje=$etapasrealizadas*100/$totaletapas;
                 $porcentaje=round($porcentaje,2);
+                
+                $pedidoobs=$pedidoobservacion->mostrarTodoRegistro("codpedidodetalle=".$d['codpedidodetalle']);
+                $totalobservaciones=count($pedidoobs);
+                
                 ?>
                 <tr class="default">
                     <td class="der"><?php echo $i?></td>
@@ -118,6 +125,8 @@ include_once($folder."cabecerahtml.php");
                         <div class="bar" style="width: <?php echo $porcentaje?>%"></div>
                     </div>
                     <?php echo $etapasrealizadas;?> de <?php echo $totaletapas?> (<?php echo $porcentaje?>%)
+                    <br>
+                    Obs.: <?php echo $totalobservaciones;?>
                     </td>
                     <td width="15"><a href="controlproduccion.php?cpd=<?php echo $d['codpedidodetalle']?>&cpe=<?php echo $_GET['codpedido']?>&cpro=<?php echo $d['codproducto']?>" class="btn">Control de Producción</a></td>
                 </tr>
