@@ -137,6 +137,8 @@ include_once($folder."cabecerahtml.php");
                 $totaletapas=count($proet);
                 $pedet=$pedidoetapa->mostrarTodoRegistro("codpedidodetalle=".$dat['codpedidodetalle']);
                 $etapasrealizadas=count($pedet);
+                $porcentaje=$etapasrealizadas*100/$totaletapas;
+                $porcentaje=round($porcentaje,2);
                 ?>
                 <a name="etapa"></a>
                 <table class="table table-bordered table-striped table-hover tablanoancha enlinea">
@@ -144,7 +146,12 @@ include_once($folder."cabecerahtml.php");
                     <tr><th colspan="3">Etapas</th></tr>
                 </thead>
                     <tr>
-                        <td class="resaltar der" colspan="3">Total: <?php echo $etapasrealizadas;?> de <?php echo $totaletapas?></td>
+                        <td class="resaltar der" colspan="3">
+                        <div class="progress progress-striped active" style="margin-bottom:5px;">
+                            <div class="bar" style="width: <?php echo $porcentaje?>%"></div>
+                        </div>
+                        Progreso: <?php echo $etapasrealizadas;?> de <?php echo $totaletapas?> (<?php echo $porcentaje?>%)
+                        </td>
                     </tr>
                     <tr class="resaltar">
                         <td width="15">Nº</td><td>Etapa</td><td></td>
