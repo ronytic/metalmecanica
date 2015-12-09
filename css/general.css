@@ -4,6 +4,9 @@
 .der,tr.der td,table.der tr td,td.der{
     text-align:right    
 }
+.tablanoancha{
+    width:auto !important;    
+}
 .tabla td,.tabla th{
     padding: 8px;    
 }
@@ -24,4 +27,11 @@ tr td.correcto{
 }
 tr:hover td.correcto{
     background-color:#91EB93 !important;    
+}
+.enlinea{
+    display:inline-block; 
+    vertical-align:top   
+}
+.table.enlinea{
+    margin-right:10px !important;    
 }
