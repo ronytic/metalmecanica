@@ -7,8 +7,8 @@ class menu extends bd{
 		switch($Nivel){
 			case "1":{return $this->getRecords(" superadmin=1 and activo=1 ","orden");}break;
 			case "2":{return $this->getRecords(" administrador=1 and activo=1 ","orden");}break;
-			case "3":{return $this->getRecords(" recepcionista=1 and activo=1","orden");}break;
-			case "4":{return $this->getRecords(" encargado=1 and activo=1","orden");}break;
+			case "3":{return $this->getRecords(" gerente=1 and activo=1","orden");}break;
+			case "4":{return $this->getRecords(" productor=1 and activo=1","orden");}break;
 		}
 	}
 }
