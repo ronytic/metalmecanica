@@ -88,7 +88,7 @@ foreach($dat as $d){$i++;
     }
     
 }
-//$pedidotemporal->vaciar();
+$pedidotemporal->vaciar();
 
 include_once("../../class/pedidopendiente.php");
 $pedidopendiente=new pedidopendiente;
