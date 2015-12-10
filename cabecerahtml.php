@@ -16,6 +16,7 @@ $nombreusuario=$dusuarios['nombre']." ".$dusuarios['paterno'];
 <link rel="stylesheet" href="<?php echo $folder?>css/core/style.default.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $folder?>css/general.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $folder?>css/core/responsive-tables.css">
+<link rel="shortcut icon" href="<?php echo $folder?>imagenes/favicon.ico" type="image/x-icon">
 <script type="text/javascript" src="<?php echo $folder?>js/core/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="<?php echo $folder?>js/core/jquery-migrate-1.1.1.min.js"></script>
 <script type="text/javascript" src="<?php echo $folder?>js/core/jquery-ui-1.9.2.min.js"></script>
