@@ -17,9 +17,9 @@
                         <div class="userloggedinfo">
                         <!--<img src="images/photos/thumb1.png" alt="" />-->
                             <div class="userinfo">
-                                <h5><? echo $_SESSION['nombre_me']?> </h5>
+                                <h5><? echo $nombreusuario?> </h5>
                                 <ul>
-                                    <li><a href="<?php echo $folder?>login/logout.php">Salir</a></li>
+                                    <li><a href="<?php echo $folder?>login/logout.php">Salir del Sistema</a></li>
                                 </ul>
                             </div>
                        </div>

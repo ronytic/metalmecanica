@@ -1,5 +1,10 @@
 <?php
-
+print_r($_SESSION);
+include_once($folder."class/usuario.php");
+$datosusu=new usuario;
+$dusuarios=$datosusu->mostrarDatos($_SESSION['CodUsuarioLog']);
+$dusuarios=array_shift($dusuarios);
+$nombreusuario=$dusuarios['nombre']." ".$dusuarios['paterno'];
 ?>
 <!DOCTYPE html>
 <html>
