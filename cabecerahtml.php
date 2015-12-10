@@ -1,5 +1,5 @@
 <?php
-print_r($_SESSION);
+//print_r($_SESSION);
 include_once($folder."class/usuario.php");
 $datosusu=new usuario;
 $dusuarios=$datosusu->mostrarDatos($_SESSION['CodUsuarioLog']);
