@@ -50,7 +50,7 @@ foreach($p as $r){
 			}else{
 				$cantidad=$cantidad-$inv['cantidadstock'];
 				$valores=array("cantidadstock"=>0,"fechasalida"=>"'$fechasalida'");
-				$stock->actualizarRegistro($valores,$inv["codcompra"]);
+				$stock->actualizarRegistro($valores,"codstock=".$inv["codstock"]);
 			}
 		}
 	}
