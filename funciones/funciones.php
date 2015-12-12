@@ -73,7 +73,6 @@ function quitarSimbolos($string,$Espacio=true){
 	}
     return $string;
 }
-if(date("Y-m-d")>="2015-12-16"){die( "Sistema Bloqueado, ya caduco la etapa de prueba contactese con el administrador. Cel: 73230568 Ronald Nina");}
 function quitarSimbolosArchivo($string,$Espacio=true){
     $string = trim($string);
     $string = str_replace(array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),$string);
