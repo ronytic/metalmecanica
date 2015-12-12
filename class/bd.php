@@ -210,16 +210,16 @@ class bd{
 			$Nivel=$_SESSION['Nivel'];
 			
 
-			if(!isset($Values['FechaRegistro'])&& empty($Values['FechaRegistro'])){
+			if(!isset($Values['fecha'])&& empty($Values['fecha'])){
 				$Values['fecha']="'$fecha'";
 			}
-			if(!isset($Values['HoraRegistro'])&& empty($Values['HoraRegistro'])){
+			if(!isset($Values['hora'])&& empty($Values['hora'])){
 				$Values['hora']="'$hora'";
 			}
-			if(!isset($Values['CodUsuario'])&& empty($Values['CodUsuario'])){
+			if(!isset($Values['id'])&& empty($Values['id'])){
 				$Values['id']="$CodUsuario";
 			}
-            if(!isset($Values['Nivel'])&& empty($Values['Nivel'])){
+            if(!isset($Values['nivel'])&& empty($Values['nivel'])){
 				$Values['nivel']="$Nivel";
 			}
 			$Values['activo']=1;
