@@ -2,8 +2,8 @@
 include_once("../../login/check.php");
 $mes=$_POST['mes'];
 $anio=$_POST['anio'];
-$mes=12;
-$anio=2015;
+//$mes=12;
+//$anio=2015;
 include_once("../../class/pedidodetalle.php");
 $pedidodetalle=new pedidodetalle;
 include_once("../../class/producto.php");
