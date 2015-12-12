@@ -39,7 +39,7 @@ $promat=$productomateriaprima->mostrarTodoRegistro("codproducto=".$d['codproduct
     <td><?php echo $pro['unidad']?></td>
     <td><?php echo $pro['tiempoproduccion']?></td>
     <td class="resaltar">Nombre</td>
-    <td class="resaltar"  width="25">Cant.</td>
+    <td class="resaltar"  width="25">Cant.Uni.</td>
     <td class="resaltar" width="60">Unidad</td>
     <td class="resaltar" width="25">Total</td>
     <td width="15"><a href="eliminar.php" class="eliminarproducto" title="Eliminar" rel="<?php echo $d['codpedidotemporal']?>"><span class="icon-trash"></span></a></td>

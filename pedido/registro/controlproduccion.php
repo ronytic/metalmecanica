@@ -116,7 +116,7 @@ include_once($folder."cabecerahtml.php");
                 <tr class="default">
                     <td class="resaltar der" width="15">Nº</td>
                     <td class="resaltar" width="125">Nombre</td>
-                    <td class="resaltar"  width="25">Cant.</td>
+                    <td class="resaltar"  width="25">Cant.Uni.</td>
                     <td class="resaltar" width="60">Unidad</td>
                     <td class="resaltar" width="25">Total</td>
                     
@@ -151,7 +151,7 @@ include_once($folder."cabecerahtml.php");
                     <tr>
                         <td class="resaltar der" colspan="3">
                         <div class="progress progress-striped active" style="margin-bottom:5px;">
-                            <div class="bar" style="width: <?php echo $porcentaje?>%"></div>
+                            <div class="bar" style="width: <?php echo round($porcentaje,0)?>%"></div>
                         </div>
                         Progreso: <?php echo $etapasrealizadas;?> de <?php echo $totaletapas?> (<?php echo $porcentaje?>%)
                         </td>

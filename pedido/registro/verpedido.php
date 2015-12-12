@@ -117,12 +117,12 @@ include_once($folder."cabecerahtml.php");
                     <td><?php echo $pro['unidad']?></td>
                     <td><?php echo $pro['tiempoproduccion']?></td>
                     <td class="resaltar">Nombre</td>
-                    <td class="resaltar"  width="25">Cant.</td>
+                    <td class="resaltar"  width="25">Cant.Uni.</td>
                     <td class="resaltar" width="60">Unidad</td>
                     <td class="resaltar" width="25">Total</td>
                     <td class="resaltar der" width="25">
                     <div class="progress progress-striped active" style="margin-bottom:5px;">
-                        <div class="bar" style="width: <?php echo $porcentaje?>%"></div>
+                        <div class="bar" style="width: <?php echo round($porcentaje,0)?>%"></div>
                     </div>
                     <?php echo $etapasrealizadas;?> de <?php echo $totaletapas?> (<?php echo $porcentaje?>%)
                     <br>
