@@ -37,8 +37,10 @@ switch($u['nivel']){
     <td><?php echo $u['celular']?></td>
     <td><?php echo $nivel?></td>
     <td><?php echo $u['cargo'];?></td>
-    <td><a href="modificar.php?codusuarios=<?php echo $u['codusuarios']?>" class="btn btn-xs btn-success modificar">M</a>
-    <a href="eliminar.php" rel="<?php echo $u['codusuarios']?>" class="btn btn-xs btn-danger eliminar">X</a></td>
+    <td width="15"><a href="modificar.php?codusuarios=<?php echo $u['codusuarios']?>" class="modificar"><i class="icon-pencil"></i></a>
+    </td>
+    <td width="15">
+    <a href="eliminar.php" rel="<?php echo $u['codusuarios']?>" class=" eliminar"><span class="icon-trash"></span></a></td>
   </tr>
   <?php  
     }
