@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-$titulo="Estadística de Salida de Productos";
+$titulo="Estadística General de Salida de Productos";
 $folder="../../";
 include_once($folder."cabecerahtml.php");
 ?>

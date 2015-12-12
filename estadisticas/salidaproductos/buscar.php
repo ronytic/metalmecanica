@@ -29,7 +29,7 @@ $('#container').highcharts({
                 type: 'pie'
             },
             title: {
-                text: 'Estadística de Salida de Productos'
+                text: 'Estadística General de Salida de Productos'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
