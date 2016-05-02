@@ -118,9 +118,9 @@ $dpp=array_shift($dpp);
         </tr>
     </thead>
     <tr>
-        <td><input type="text" name="nombrecliente"  class="input-medium" placeholder="" value="<?php echo $dpp['nombrecliente']?>"></td>
-        <td><input type="text" name="cicliente"  class="input-small" maxlength="12" value="<?php echo $dpp['cicliente']?>"></td>
-        <td><input type="text" name="celularcliente"  class="input-small" maxlength="12" value="<?php echo $dpp['celularcliente']?>"></td>
+        <td><input type="text" name="nombrecliente"  class="input-medium" placeholder="" value="<?php echo $dpp['nombrecliente']?>" required></td>
+        <td><input type="text" name="cicliente"  class="input-small" maxlength="12" value="<?php echo $dpp['cicliente']?>" required></td>
+        <td><input type="text" name="celularcliente"  class="input-small" maxlength="12" value="<?php echo $dpp['celularcliente']?>" required></td>
         <td><input type="date" name="fechaentregaestimada"  class="input-medium" required value="<?php echo $dpp['fechaentregaestimada']?>"></td>
         <td>
             <?php if($_POST['codpedidopendiente']==""){?>

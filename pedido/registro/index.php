@@ -48,12 +48,42 @@ $(document).on("ready",function(){
     })
     $(document).on("click","#pendiente",function(e){
         e.preventDefault();
+        if($("input[name=nombrecliente]").val()==""){
+            alert("Por Registre el Nombre del Cliente");
+            $("input[name=nombrecliente]").focus();
+            return false;    
+        }
+        if($("input[name=cicliente]").val()==""){
+            alert("Por Registre el C.I. del Cliente");
+            $("input[name=cicliente]").focus();
+            return false;    
+        }
+        if($("input[name=celularcliente]").val()==""){
+            alert("Por Registre el Celular del Cliente");
+            $("input[name=celularcliente]").focus();
+            return false;    
+        }
         if(confirm("¿ESTA SEGURO DE GUARDAR ESTE PEDIDO COMO PENDIENTE?\n")){
             $("#formulario").attr("action","guardarpendiente.php").submit();
         }
     }) 
     $(document).on("click","#pedido",function(e){
         e.preventDefault();
+        if($("input[name=nombrecliente]").val()==""){
+            alert("Por Registre el Nombre del Cliente");
+            $("input[name=nombrecliente]").focus();
+            return false;    
+        }
+        if($("input[name=cicliente]").val()==""){
+            alert("Por Registre el C.I. del Cliente");
+            $("input[name=cicliente]").focus();
+            return false;    
+        }
+        if($("input[name=celularcliente]").val()==""){
+            alert("Por Registre el Celular del Cliente");
+            $("input[name=celularcliente]").focus();
+            return false;    
+        }
         if(confirm("¿ESTA SEGURO DE REALIZAR ESTE PEDIDO?\n SE DESCONTARA LA MATERIA PRIMA DE INVENTARIO")){
             $("#formulario").attr("action","guardarpedido.php").submit();
         }
