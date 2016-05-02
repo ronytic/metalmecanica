@@ -29,14 +29,14 @@ $(document).on("ready",function(){
                     <tr>
                         <th>Nombre de la Empresa</th>
                         <th>Materia Prima</th>
-                        <th>
-                        </th>
+                        <th>Referente</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tr>
                     <td><input type="text" name="nombreempresa" class="form-control"></td>
                     <td><input type="text" name="materiaprima" class="form-control"></td>
-                    <td><input type="submit" value="Buscar" class="btn btn-info"></td>
+                    <td><input type="text" name="referente" class="form-control"></td>                    <td><input type="submit" value="Buscar" class="btn btn-info"></td>
                 </tr>
             </table>
         </form>
