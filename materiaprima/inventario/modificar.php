@@ -31,11 +31,11 @@ include_once($folder."cabecerahtml.php");
                     </tr>
                     <tr>
                         <td width="200" class="der">CANTIDAD</td>
-                        <td><input type="text" name="cantidad" id="cantidad" class="input-large" value="<?php echo $dat['cantidad']?>"/></td>
+                        <td><input type="number" name="cantidad" id="cantidad" class="input-large" value="<?php echo $dat['cantidad']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">OBSERVACIÓN</td>
-                        <td><textarea cols="80" rows="5" name="observacion" class="input-xxlarge" id="observacion"><?php echo $dat['observacion']?></textarea></td>
+                        <td><textarea cols="80" rows="5" name="observacion" class="input-xxlarge" id="observacion" required><?php echo $dat['observacion']?></textarea></td>
                     </tr>
                     <tr>
                         <td></td>
