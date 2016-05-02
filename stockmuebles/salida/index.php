@@ -32,7 +32,7 @@ $(document).on("ready",function(){
 <div class="widgetbox box-inverse">
     <h4 class="widgettitle">Registro de Salida de Productos</h4>
     <div class="widgetcontent wc1">
-        <form action="guardar.php" method="post">
+        <form action="guardar.php" method="post" required>
             <table class="tabla table table-inverse table-bordered">
                 <thead>
                     <tr>

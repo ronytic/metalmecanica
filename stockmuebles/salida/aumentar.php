@@ -22,12 +22,12 @@ $stock=new stock;
         </select>
     </td>
     <td>
-        <input type="number" name="p[<?php echo $l?>][cantidad]" value="0" min="0" class="input-medium der cantidad" rel="<?php echo $l?>">
+        <input type="number" name="p[<?php echo $l?>][cantidad]" value="" min="0" class="input-medium der cantidad" rel="<?php echo $l?>" required placeholder="0">
     </td>
     <td>
-        <input type="date" name="p[<?php echo $l?>][fechasalida]" value="<?php echo date("Y-m-d")?>" required class="input-medium">
+        <input type="date" name="p[<?php echo $l?>][fechasalida]" value="<?php echo date("Y-m-d")?>" required class="input-medium" >
     </td>
     <td>
-        <input type="text" name="p[<?php echo $l?>][observacion]" class="input-medium">
+        <input type="text" name="p[<?php echo $l?>][observacion]" class="input-medium" >
     </td>
 </tr>

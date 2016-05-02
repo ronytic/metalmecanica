@@ -16,7 +16,7 @@ include_once($folder."cabecerahtml.php");
                 <table class="table">
                     <tr>
                         <td width="200" class="der">PRODUCTO</td>
-                        <td><select name="codproducto" id="codproducto" class="input-xl" autofocus>
+                        <td><select name="codproducto" id="codproducto" class="input-xl" autofocus required>
                             <?php foreach($prod as $p){?>
                             <option value="<?php echo $p['codproducto']?>"><?php echo $p['nombre']?> - <?php echo $p['codigo']?> - <?php echo $p['unidad']?></option>
                             <?php }?>
@@ -24,11 +24,11 @@ include_once($folder."cabecerahtml.php");
                     </tr>
                     <tr>
                         <td width="200" class="der">CANTIDAD A RECARGAR</td>
-                        <td><input type="text" name="cantidad" id="cantidad" class="input-large" /></td>
+                        <td><input type="number" name="cantidad" id="cantidad" class="input-large" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">OBSERVACIÓN</td>
-                        <td><input type="text" name="observacion" id="observacion" class="input-large" /></td>
+                        <td><input type="text" name="observacion" id="observacion" class="input-large" required/></td>
                     </tr>
                     <tr>
                         <td></td>
