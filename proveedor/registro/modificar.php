@@ -18,11 +18,11 @@ include_once($folder."cabecerahtml.php");
                 <table class="table">
                     <tr>
                         <td width="200" class="der">NOMBRE DE LA EMPRESA</td>
-                        <td><input type="text" name="nombreempresa" id="nombreempresa" class="input-large" autofocus value="<?php echo $dat['nombreempresa']?>"/></td>
+                        <td><input type="text" name="nombreempresa" id="nombreempresa" class="input-large" autofocus value="<?php echo $dat['nombreempresa']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">DIRECCION DE LA EMPRESA</td>
-                        <td><input type="text" name="direccion" id="direccion" class="input-large" value="<?php echo $dat['direccion']?>"/></td>
+                        <td><input type="text" name="direccion" id="direccion" class="input-large" value="<?php echo $dat['direccion']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">EMAIL</td>
@@ -30,19 +30,19 @@ include_once($folder."cabecerahtml.php");
                     </tr>
                     <tr>
                         <td width="200" class="der">TELEFONO</td>
-                        <td><input type="text" name="telefono" id="telefono" class="input-large" value="<?php echo $dat['telefono']?>"/></td>
+                        <td><input type="text" name="telefono" id="telefono" class="input-large" value="<?php echo $dat['telefono']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">REFERENTE</td>
-                        <td><input type="text" name="referente" id="referente" class="input-large" value="<?php echo $dat['referente']?>"/></td>
+                        <td><input type="text" name="referente" id="referente" class="input-large" value="<?php echo $dat['referente']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">MATERIA PRIMA</td>
-                        <td><input type="text" name="materiaprima" id="materiaprima" class="input-large" value="<?php echo $dat['materiaprima']?>"/></td>
+                        <td><input type="text" name="materiaprima" id="materiaprima" class="input-large" value="<?php echo $dat['materiaprima']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">DESCRIPCION</td>
-                        <td><textarea cols="80" rows="5" name="descripcion" class="input-xxlarge" id="descripcion"><?php echo $dat['descripcion']?></textarea></td>
+                        <td><textarea cols="80" rows="5" name="descripcion" class="input-xxlarge" id="descripcion" required><?php echo $dat['descripcion']?></textarea></td>
                     </tr>
                     <tr>
                         <td></td>

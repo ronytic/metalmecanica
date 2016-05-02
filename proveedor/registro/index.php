@@ -13,11 +13,11 @@ include_once($folder."cabecerahtml.php");
                 <table class="table">
                     <tr>
                         <td width="200" class="der">NOMBRE DE LA EMPRESA</td>
-                        <td><input type="text" name="nombreempresa" id="nombreempresa" class="input-large" autofocus/></td>
+                        <td><input type="text" name="nombreempresa" id="nombreempresa" class="input-large" autofocus required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">DIRECCION DE LA EMPRESA</td>
-                        <td><input type="text" name="direccion" id="direccion" class="input-large" /></td>
+                        <td><input type="text" name="direccion" id="direccion" class="input-large" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">EMAIL</td>
@@ -25,19 +25,19 @@ include_once($folder."cabecerahtml.php");
                     </tr>
                     <tr>
                         <td width="200" class="der">TELEFONO</td>
-                        <td><input type="text" name="telefono" id="telefono" class="input-large" /></td>
+                        <td><input type="text" name="telefono" id="telefono" class="input-large" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">REFERENTE</td>
-                        <td><input type="text" name="referente" id="referente" class="input-large" /></td>
+                        <td><input type="text" name="referente" id="referente" class="input-large" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">MATERIA PRIMA</td>
-                        <td><input type="text" name="materiaprima" id="materiaprima" class="input-large" /></td>
+                        <td><input type="text" name="materiaprima" id="materiaprima" class="input-large" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">DESCRIPCION</td>
-                        <td><textarea cols="80" rows="5" name="descripcion" class="input-xxlarge" id="descripcion"></textarea></td>
+                        <td><textarea cols="80" rows="5" name="descripcion" class="input-xxlarge" id="descripcion" required></textarea></td>
                     </tr>
                     <tr>
                         <td></td>
