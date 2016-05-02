@@ -84,23 +84,23 @@ function listarmateriaprima(){
                 <table class="table">
                     <tr>
                         <td width="200" class="der">CÓDIGO</td>
-                        <td><input type="text" name="codigo" id="codigo" class="input-large" autofocus value="<?php echo $dat['codigo']?>"/></td>
+                        <td><input type="text" name="codigo" id="codigo" class="input-large" autofocus value="<?php echo $dat['codigo']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">NOMBRE</td>
-                        <td><input type="text" name="nombre" id="nombre" class="input-large" value="<?php echo $dat['nombre']?>"/></td>
+                        <td><input type="text" name="nombre" id="nombre" class="input-large" value="<?php echo $dat['nombre']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">UNIDAD</td>
-                        <td><input type="text" name="unidad" id="unidad" class="input-large" value="<?php echo $dat['unidad']?>"/></td>
+                        <td><input type="text" name="unidad" id="unidad" class="input-large" value="<?php echo $dat['unidad']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">TIEMPO DE PRODUCCIÓN</td>
-                        <td><input type="text" name="tiempoproduccion" id="tiempoproduccion" class="input-large" value="<?php echo $dat['tiempoproduccion']?>"/></td>
+                        <td><input type="text" name="tiempoproduccion" id="tiempoproduccion" class="input-large" value="<?php echo $dat['tiempoproduccion']?>" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">DESCRIPCION</td>
-                        <td><textarea cols="80" rows="5" name="descripcion" class="input-xxlarge" id="descripcion"><?php echo $dat['descripcion']?></textarea></td>
+                        <td><textarea cols="80" rows="5" name="descripcion" class="input-xxlarge" id="descripcion" required><?php echo $dat['descripcion']?></textarea></td>
                     </tr>
                     <tr>
                         <td></td>

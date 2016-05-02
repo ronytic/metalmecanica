@@ -13,15 +13,15 @@ include_once($folder."cabecerahtml.php");
                 <table class="table">
                     <tr>
                         <td width="200" class="der">CÓDIGO DE LA ETAPA</td>
-                        <td><input type="text" name="codigo" id="codigo" class="input-large" autofocus/></td>
+                        <td><input type="text" name="codigo" id="codigo" class="input-large" autofocus required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">NOMBRE DE LA ETAPA</td>
-                        <td><input type="text" name="nombre" id="nombre" class="input-large" /></td>
+                        <td><input type="text" name="nombre" id="nombre" class="input-large" required/></td>
                     </tr>
                     <tr>
                         <td width="200" class="der">DESCRIPCIÓN</td>
-                        <td><input type="text" name="descripcion" id="descripcion" class="input-large" /></td>
+                        <td><input type="text" name="descripcion" id="descripcion" class="input-large" required/></td>
                     </tr>
                     <tr>
                         <td></td>
